@@ -116,4 +116,6 @@ $("#infosubmit").on("click", function (event) {
   $("#inputuser").val("");
   $("#inputemail").val("");
   $("#inputpassword").val("");
+
+  $('#signupModal').modal('hide');
 });
