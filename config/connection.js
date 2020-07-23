@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("gitpetusers_db", "root", "f!d3litY", {
+var sequelize = new Sequelize("gitpetusers_db", "root", "NewPassword!23", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
