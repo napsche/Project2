@@ -1,37 +1,16 @@
 var petfinder = require("@petfinder/petfinder-js");
 var client = new petfinder.Client({apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF", secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"});
-var queryURL = "https://api.petfinder.com/v2/" + petType + "=?" + location + "=?" /us/pa/shavertown/?age%5B0%5D=Young&gender%5B0%5D=female";
+var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
 // https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
 // https://api.petfinder.com/v2/dog/us/pa/shavertown/female/young
 
-$("#infosubmit").on("click", function (event) {
-  event.preventDefault();
-
-  var newUser = {
-      uname: $("#inputuser").val().trim(),
-      email: $("#inputemail").val().trim(),
-      pass: $("#inputpassword").val().trim()
-  };
-
-  $.post("/api/new", newUser)
-      .then(function (data) {
-          console.log(newUser);
-          alert("Adding User");
-      });
-
-  $("#inputuser").val("");
-  $("#inputemail").val("");
-  $("#inputpassword").val("");
-
-  $('#signupModal').modal('hide');
-});
 
 $("#go-fetch").on("click", function (event) {
     event.preventDefault();
   
     var newSearch = {
         type: $("#pet").val().trim(),
-        city: $("#location").val().trim(),
+        location: $("#location").val().trim(),
         gender: $("#gender").val().trim(),
         age: $("#age").val().trim()
     };

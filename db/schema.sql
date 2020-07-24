@@ -9,3 +9,4 @@ CREATE TABLE gitpet_users (
 	pass varchar(50) NOT NULL,
 	PRIMARY KEY (id)
 );
+

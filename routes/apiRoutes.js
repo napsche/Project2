@@ -1,37 +1,43 @@
 var db = require("../models");
-var User = require("../models/user");
+var NewUser = require("../models/user");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
+  app.get("/api/new", function (req, res) {
+    db.NewUser.findAll({}).then(function (dbNewUser) {
+      res.json(dbNewUser);
+    });
+  });
 
   // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  app.get("/api/new", function(req, res) {
-    var user = req.body;
-
-    User.create({
+  app.post("/api/new", function (req, res) {
+    db.NewUser.create(req.body).then(function (dbNewUser) {
+      NewUser.create({
         uname: user.uname,
         email: user.email,
         pass: user.pass
+      });
+      
+      res.json(dbNewUser);
+      res.status(204).end();
     });
+  });
 
-    res.status(204).end();
-});
+  // Delete an example by id
+  app.delete("/api/new/:id", function (req, res) {
+    db.NewUser.destroy({ where: { id: req.params.id } }).then(function (dbNewUser) {
+      res.json(dbNewUser);
+    });
+  });
+
+  // app.get("/api/new", function (req, res) {
+  //   var user = req.body;
+
+  //   NewUser.create({
+  //     uname: user.uname,
+  //     email: user.email,
+  //     pass: user.pass
+  //   });
+
+  // });
 };
