@@ -26,13 +26,14 @@ module.exports = function (app) {
   });
 
   // // Create a new example
-  app.post("/api/users", function (req, res) {
+  app.post("/api/new", function (req, res) {
     db.User.create({
         uname: req.body.uname,
         email: req.body.email,
         pass: req.body.pass
       })
       .then(function(dbUser) {
+        console.log(dbUser);
         res.json(dbUser);
       });
   });
