@@ -5,4 +5,3 @@ module.exports = function(sequelize, DataTypes) {
         pass: DataTypes.STRING
     });
     return User;
-};
