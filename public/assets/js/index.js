@@ -2,14 +2,20 @@ var pf = new petfinder.Client({
     apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
     secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
   });
+
+function submitSearch(search) {
+    // window.location.href=`/search?q=${search}`;
+    console.log(search);
+}
+
 $("#go-fetch").on("click", function (event) {
     event.preventDefault();
   
     var newSearch = {
         type: $("#pet").val().trim(),
         location: $("#location").val().trim(),
-        gender: $("#gender").val().trim(),
-        age: $("#age").val().trim()
+        gender: $("#gender").val(),
+        age: $("#age").val()
     };
   
     pf.animal.search()
@@ -38,9 +44,10 @@ $("#go-fetch").on("click", function (event) {
     $("#gender").val("");
     $("#age").val("");
   
-    $("#search-results").append(function() {
+    $("#search-container").append(function() {
 
     });
+    submitSearch();
   });
 
 
@@ -107,6 +114,8 @@ function parseJSON(data) {
         //$("div").append(value.id + " <br>");
         $(pfID).wrapInner("(Petfinder ID: " + value.id + ")")
     });
+
+   
 }
 
 

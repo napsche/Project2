@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("gitpet_users", {
+    console.log("anything");
+    var User = sequelize.define("User", {
         uname: DataTypes.STRING,
         email: DataTypes.STRING,
         pass: DataTypes.STRING
