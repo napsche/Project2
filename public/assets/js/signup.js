@@ -14,9 +14,9 @@ $(document).ready(function() {
     }
   
     // Getting jQuery references to the user body, title, form, and category select
-    var nameInput = $("#username");
-    var emailInput = $("#email");
-    var passwordInput = $("#password");
+    var nameInput = $("#inputuser");
+    var emailInput = $("#inputemail");
+    var passwordInput = $("#inputpassword");
     var signUpForm = $("#infosubmit");
   
     // Adding an event listener for when the form is submitted

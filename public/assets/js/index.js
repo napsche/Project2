@@ -1,10 +1,7 @@
-var petfinder = require("@petfinder/petfinder-js");
-var client = new petfinder.Client({apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF", secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"});
-var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
-// https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
-// https://api.petfinder.com/v2/dog/us/pa/shavertown/female/young
-
-
+var pf = new petfinder.Client({
+    apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
+    secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
+  });
 $("#go-fetch").on("click", function (event) {
     event.preventDefault();
   
@@ -15,17 +12,26 @@ $("#go-fetch").on("click", function (event) {
         age: $("#age").val().trim()
     };
   
-    $.ajax({
-        url: queryURL, 
-        method: "GET"
-    }).then(function (response) {
-        console.log(response); 
+    pf.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
+        console.log(response);
     })
-    post("/api/search", newSearch)
-        .then(function (data) {
-            console.log(newSearch);
-            alert("Searching for your new best friend!");
-        });
+    .catch(function (error) {
+        // Handle the error
+        console.log(error);
+    });
+    // $.ajax({
+    //     url: queryURL, 
+    //     method: "GET"
+    // }).then(function (response) {
+    //     console.log(response); 
+    // })
+    // post("/api/search", newSearch)
+    //     .then(function (data) {
+    //         console.log(newSearch);
+    //         alert("Searching for your new best friend!");
+    //     });
   
     $("#pet").val("");
     $("#location").val("");
@@ -38,15 +44,15 @@ $("#go-fetch").on("click", function (event) {
   });
 
 
-$(function () {
-    $.ajax({
-        url: 'scripts/cats.json',
-        dataType: 'json',
-        type: 'get',
-        cache: false,
-        success: parseJSON
-    });
-});
+// $(function () {
+//     $.ajax({
+//         url: 'scripts/cats.json',
+//         dataType: 'json',
+//         type: 'get',
+//         cache: false,
+//         success: parseJSON
+//     });
+// });
 //end on load
 function parseJSON(data) {
     $(data.animals).each(function (index, value) {

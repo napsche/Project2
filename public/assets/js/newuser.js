@@ -1,6 +1,3 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
-
 $("#infosubmit").on("click", function (event) {
     event.preventDefault();
   
