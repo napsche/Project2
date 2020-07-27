@@ -1,4 +1,3 @@
-
 var express = require("express");
 var exphbs = require("express-handlebars");
 var mysql2 = require("mysql2");

@@ -39,11 +39,11 @@ module.exports = function (app) {
   });
 
   app.post("/api/login", function(req, res) {
-    res.json(req.User);
-  });
+    res.json(req.dbUser);
+  })
 
   // Delete an example by id
-  app.delete("/api/users/:id", function (req, res) {
+  app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({ 
       where: { 
         id: req.params.id 
