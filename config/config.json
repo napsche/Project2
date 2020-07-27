@@ -1,9 +1,9 @@
 {
     "development": {
-      "username": "root",
-      "password": "NewPassword!23",
-      "database": "gitpetusers_db",
-      "host": "localhost",
+      "username": "gla2750ulx4lu0il",
+      "password": "nvkq5fucin1h1vzj",
+      "database": "tp5tg4qergn92ww3",
+      "host": "mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     },
     "production": {
