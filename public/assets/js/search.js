@@ -1,5 +1,5 @@
 //Logic to display the search results in 
-
+console.log(window.location.search);
 var pf = new petfinder.Client({
     apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
     secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
@@ -12,7 +12,7 @@ var pf = new petfinder.Client({
     console.log(response.results[i].animal.age);
   
     for (var i = 0; i < 10; i++) {
-      animalDiv = $("#search-results");
+      animalDiv = $("#search-container");
   
       var type = response.results[i].animal.type;
       var pOne = $("<h4>").text(type);
@@ -30,7 +30,6 @@ var pf = new petfinder.Client({
       var pFour = $("<h4>").text(age);
       animalDiv.append(pFour);
   
-      $("#search-results").prepend(animalDiv);
+      $("#search-container").prepend(animalDiv);
     }
   });
-  

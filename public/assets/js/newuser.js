@@ -1,6 +1,3 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
-
 $("#infosubmit").on("click", function (event) {
     event.preventDefault();
   
@@ -28,4 +25,4 @@ $("#infosubmit").on("click", function (event) {
   });
 //   newUser.sync();
 
-//   module.exports = newUser; 
+//   module.exports = newUser;

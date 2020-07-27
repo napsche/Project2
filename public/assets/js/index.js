@@ -1,9 +1,12 @@
-var petfinder = require("@petfinder/petfinder-js");
-var client = new petfinder.Client({apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF", secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"});
-var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
-// https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
-// https://api.petfinder.com/v2/dog/us/pa/shavertown/female/young
+var pf = new petfinder.Client({
+    apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
+    secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
+  });
 
+function submitSearch(search) {
+    // window.location.href=`/search?q=${search}`;
+    console.log(search);
+}
 
 $("#go-fetch").on("click", function (event) {
     event.preventDefault();
@@ -11,42 +14,52 @@ $("#go-fetch").on("click", function (event) {
     var newSearch = {
         type: $("#pet").val().trim(),
         location: $("#location").val().trim(),
-        gender: $("#gender").val().trim(),
-        age: $("#age").val().trim()
+        gender: $("#gender").val(),
+        age: $("#age").val()
     };
   
-    $.ajax({
-        url: queryURL, 
-        method: "GET"
-    }).then(function (response) {
-        console.log(response); 
+    pf.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
+        console.log(response);
     })
-    post("/api/search", newSearch)
-        .then(function (data) {
-            console.log(newSearch);
-            alert("Searching for your new best friend!");
-        });
+    .catch(function (error) {
+        // Handle the error
+        console.log(error);
+    });
+    // $.ajax({
+    //     url: queryURL, 
+    //     method: "GET"
+    // }).then(function (response) {
+    //     console.log(response); 
+    // })
+    // post("/api/search", newSearch)
+    //     .then(function (data) {
+    //         console.log(newSearch);
+    //         alert("Searching for your new best friend!");
+    //     });
   
     $("#pet").val("");
     $("#location").val("");
     $("#gender").val("");
     $("#age").val("");
   
-    $("#search-results").append(function() {
+    $("#search-container").append(function() {
 
     });
+    submitSearch();
   });
 
 
-$(function () {
-    $.ajax({
-        url: 'scripts/cats.json',
-        dataType: 'json',
-        type: 'get',
-        cache: false,
-        success: parseJSON
-    });
-});
+// $(function () {
+//     $.ajax({
+//         url: 'scripts/cats.json',
+//         dataType: 'json',
+//         type: 'get',
+//         cache: false,
+//         success: parseJSON
+//     });
+// });
 //end on load
 function parseJSON(data) {
     $(data.animals).each(function (index, value) {
@@ -101,6 +114,8 @@ function parseJSON(data) {
         //$("div").append(value.id + " <br>");
         $(pfID).wrapInner("(Petfinder ID: " + value.id + ")")
     });
+
+   
 }
 
 
