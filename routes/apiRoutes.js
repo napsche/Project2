@@ -45,6 +45,7 @@ module.exports = function (app) {
       var searchInput = req.params.input;
       console.log(req.params.input);
 
+<<<<<<< HEAD
       db.Search.create({
         pet: req.body.pet,
         gender: req.body.gender,
@@ -59,9 +60,10 @@ module.exports = function (app) {
 <<<<<<< HEAD
 =======
   app.post("/api/search", function(req, res) {
+=======
+  app.post("/api/search/", function(req, res) {
+>>>>>>> 8c996b0... fixing apiroute to get error out of consol
     console.log(req.body);
-    var foo = JSON.parse(req.body.hello);
-    console.log(foo);
 
     db.Search.create({
       type: req.body.type,
