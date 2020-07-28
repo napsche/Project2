@@ -55,15 +55,20 @@ function postFxn() {
   // });
   
   function submitSearch(newSearch) {
-    var holdingArr = ["pet", "location", "gender", "age"];
-    event.preventDefault();
-    console.log(newSearch);
-    // window.location.href=`/search?q=${search}`;
-    var foo = $(this); 
-    console.log(foo);
+    // var holdingArr = ["pet", "location", "gender", "age"];
+    // event.preventDefault();
+    // console.log(newSearch);
+    // // window.location.href=`/search?q=${search}`;
+    // var foo = $(this); 
+    // console.log(foo);
 
-    foo = JSON.stringify(holdingArr);
-    $.post("/api/search", {holdingArr}, function(response) {
+    // foo = JSON.stringify(holdingArr);
+    var pet = $("#pet").val();
+    var location = $("#location").val();
+    var gender = $("#gender").val();
+    var age = $("#age").val();
+    
+    $.post("/api/search", { pet, location, gender, age }, function(response) {
       console.log(response);
       response = JSON.stringify(response);
       localStorage.setItem("animal", response);
