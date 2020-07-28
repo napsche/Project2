@@ -40,10 +40,8 @@ module.exports = function (app) {
       });
   });
 
-  app.post("/api/search", function(req, res) {
+  app.post("/api/search/", function(req, res) {
     console.log(req.body);
-    var foo = JSON.parse(req.body.hello);
-    console.log(foo);
 
     db.Search.create({
       type: req.body.type,
