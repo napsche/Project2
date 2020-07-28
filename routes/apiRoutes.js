@@ -68,7 +68,7 @@ module.exports = function (app) {
     console.log(req.params.input);
 
     db.Search.create({
-      type: req.body.type,
+      pet: req.body.pet,
       gender: req.body.gender,
       age: req.body.age,
       location: req.body.location
