@@ -42,6 +42,8 @@ module.exports = function (app) {
 
   app.post("/api/search/", function(req, res) {
     console.log(req.body);
+    var searchInput = req.params.input;
+    console.log(req.params.input);
 
     db.Search.create({
       type: req.body.type,
