@@ -1,6 +1,6 @@
 var db = require("../models");
 var Sequelize = require("sequelize");
-
+ 
 
 var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
 // https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
@@ -56,6 +56,36 @@ module.exports = function (app) {
         res.json(dbSearch);
       });
 
+<<<<<<< HEAD
+=======
+  app.post("/api/search", function(req, res) {
+    console.log(req.body);
+    var foo = JSON.parse(req.body.hello);
+    console.log(foo);
+
+    db.Search.create({
+      type: req.body.type,
+      gender: req.body.gender,
+      age: req.body.age,
+      location: req.body.location
+    })
+    .then(function(dbSearch) {
+      console.log(dbSearch);
+      res.json(dbSearch);
+    });
+      
+  });
+
+
+  // Delete an example by id
+  app.delete("/api/users/:id", function (req, res) {
+    db.User.destroy({ 
+      where: { 
+        id: req.params.id 
+      } 
+    }).then(function (dbUser) {
+      res.json(dbUser);
+>>>>>>> 0c7f3e6... reorganizing
     });
 
 
