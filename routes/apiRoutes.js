@@ -1,6 +1,6 @@
 var db = require("../models");
 var Sequelize = require("sequelize");
- 
+
 
 var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
 // https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
@@ -46,6 +46,9 @@ module.exports = function (app) {
       console.log(req.params.input);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
       db.Search.create({
         pet: req.body.pet,
         gender: req.body.gender,
@@ -56,6 +59,7 @@ module.exports = function (app) {
         console.log(dbSearch);
         res.json(dbSearch);
       });
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -66,21 +70,13 @@ module.exports = function (app) {
     console.log(req.body);
     var searchInput = req.params.input;
     console.log(req.params.input);
+=======
+>>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
 
-    db.Search.create({
-      pet: req.body.pet,
-      gender: req.body.gender,
-      age: req.body.age,
-      location: req.body.location
-    })
-    .then(function(dbSearch) {
-      console.log(dbSearch);
-      res.json(dbSearch);
     });
-      
-  });
 
 
+<<<<<<< HEAD
   // Delete an example by id
   app.delete("/api/users/:id", function (req, res) {
     db.User.destroy({ 
@@ -104,6 +100,19 @@ module.exports = function (app) {
       });
     });
 
+=======
+    // Delete an example by id
+    app.delete("/api/users/:id", function (req, res) {
+      db.User.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbUser) {
+        res.json(dbUser);
+      });
+    });
+
+>>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
     app.put("/api/users", function (req, res) {
       db.User.update(req.body, {
         where: {
