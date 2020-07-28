@@ -11,7 +11,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.44.4"
   },
   "devDependencies": {},
   "scripts": {
