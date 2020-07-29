@@ -45,10 +45,6 @@ module.exports = function (app) {
       var searchInput = req.params.input;
       console.log(req.params.input);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
       db.Search.create({
         pet: req.body.pet,
         gender: req.body.gender,
@@ -59,33 +55,7 @@ module.exports = function (app) {
         console.log(dbSearch);
         res.json(dbSearch);
       });
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
-  app.post("/api/search", function(req, res) {
-=======
-  app.post("/api/search/", function(req, res) {
->>>>>>> 8c996b0... fixing apiroute to get error out of consol
-    console.log(req.body);
-    var searchInput = req.params.input;
-    console.log(req.params.input);
-=======
->>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
-
-    });
-
-
-<<<<<<< HEAD
-  // Delete an example by id
-  app.delete("/api/users/:id", function (req, res) {
-    db.User.destroy({ 
-      where: { 
-        id: req.params.id 
-      } 
-    }).then(function (dbUser) {
-      res.json(dbUser);
->>>>>>> 0c7f3e6... reorganizing
     });
 
 
@@ -100,19 +70,6 @@ module.exports = function (app) {
       });
     });
 
-=======
-    // Delete an example by id
-    app.delete("/api/users/:id", function (req, res) {
-      db.User.destroy({
-        where: {
-          id: req.params.id
-        }
-      }).then(function (dbUser) {
-        res.json(dbUser);
-      });
-    });
-
->>>>>>> 358c526... edit search.js and apiroutes; now saves to database AND displays in console
     app.put("/api/users", function (req, res) {
       db.User.update(req.body, {
         where: {
