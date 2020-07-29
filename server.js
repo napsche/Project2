@@ -1,6 +1,9 @@
+require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var mysql2 = require("mysql2");
+
+ // Read and set environment variables
 
 var app = express();
 var PORT = process.env.PORT || 8080;

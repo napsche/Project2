@@ -1,3 +1,5 @@
+//WRONG LOGIC!!! This needs the logic for search input to loop through the petfinder API for results.
+
 $("#infosubmit").on("click", function (event) {
     event.preventDefault();
   
