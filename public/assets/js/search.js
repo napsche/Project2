@@ -62,7 +62,11 @@ var pf = new petfinder.Client({
         console.log(petName)
         var petPicture = response.data.animals[0].primary_photo_cropped.small;
         console.log(petPicture)
-        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"</tr>")
+        var petSize = response.data.animals[0].size;
+        var petStatus = response.data.animals[0].status;
+        var petUpdated = response.data.animals[0].status_changed_at;
+        
+        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petStatus+"</td>"+"</td>"+"<td>"+petUpdated+"</td>"+"</tr>")
 
         // var results = JSON.stringify(response);
         // $("#search-container").append("<p>" + results + "</p>");
