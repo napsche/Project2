@@ -17,7 +17,7 @@ $("#loginsubmit").on("click", function (event) {
         pass: pass
     })
         .then(function () {
-            window.location.replace("/index");
+            // window.location.replace("/index");
             alert("Welcome " + userData)
         })
         .catch(function (err) {
