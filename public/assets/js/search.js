@@ -1,4 +1,3 @@
-//Logic to display the search results in 
 console.log(window.location.search);
 var pf = new petfinder.Client({
   apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
@@ -80,6 +79,11 @@ $("#search-form").on("submit", function (event) {
       event.preventDefault();
       // Do something with `response.data.animals`
       console.log(response);
+      $("#search").remove();
+      console.log(response.data.animals[0]);
+      var results = JSON.stringify(response);
+      $("#search-container").append("<p>" + results + "</p>");
+    
     })
     .catch(function (error) {
       // Handle the error
