@@ -1,7 +1,8 @@
-require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var mysql2 = require("mysql2");
+require('dotenv').config();
+
 
  // Read and set environment variables
 

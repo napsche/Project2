@@ -1,7 +1,8 @@
 console.log(window.location.search);
+
 var pf = new petfinder.Client({
-  apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
-  secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
+  apiKey: process.env.PET_KEY,
+  secret: process.env.PET_SECRET
 });
 
 // this works and posts results to the db
@@ -63,6 +64,8 @@ function postFxn() {
   $("#search-form").on("submit", function (event) {
     event.preventDefault();
     console.log("here!!");
+    var x = document.getElementById("petTable");
+    x.style.display = "block";
   
     var newSearch = {
       type: $("#pet").val().trim(),
