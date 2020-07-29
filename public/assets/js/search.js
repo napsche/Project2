@@ -81,7 +81,7 @@ function postFxn() {
         console.log(response.data.animals[0]);
 
         // Beginning of code to display results
-        
+
         var petName = response.data.animals[0].name;
         console.log("----------------------");
         console.log(petName)
