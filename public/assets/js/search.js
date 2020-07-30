@@ -108,4 +108,3 @@ function postFxn() {
     console.log("here!!");
     submitSearch();
   });
-

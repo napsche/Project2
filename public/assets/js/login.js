@@ -23,3 +23,4 @@ $("#loginSubmitBtn").on("click", function (event) {
     $("#useremail").val("");
     $("#userpassword").val("");
 });
+
