@@ -17,7 +17,8 @@ $("#loginsubmit").on("click", function (event) {
         pass: pass
     })
         .then(function () {
-            // window.location.replace("/index");
+            $('loginModal').modal('hide');
+
             alert("Welcome " + userData)
         })
         .catch(function (err) {
@@ -25,6 +26,5 @@ $("#loginsubmit").on("click", function (event) {
         });
     $("#useremail").val("");
     $("#userpassword").val("");
-    $('loginModal').modal('hide');
 });
     
