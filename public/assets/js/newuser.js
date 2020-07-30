@@ -25,4 +25,4 @@ $("#infosubmit").on("click", function (event) {
   });
 //   newUser.sync();
 
-//   module.exports = newUser; 
+//   module.exports = newUser;
