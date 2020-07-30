@@ -93,3 +93,12 @@ module.exports = function (app) {
 
     // });
   };
+
+  // app.get("/api/search", function(req, res) {
+
+  //   var petKey = PET_KEY;
+  //   var petSecret = PET_SECRET;
+  
+  //   res.render('search.js', );
+  //   res.render('search.js'); 
+  // });

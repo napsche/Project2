@@ -63,6 +63,8 @@ function postFxn() {
   $("#search-form").on("submit", function (event) {
     event.preventDefault();
     console.log("here!!");
+    var x = document.getElementById("petTable");
+    x.style.display = "block";
   
     var newSearch = {
       type: $("#pet").val().trim(),
