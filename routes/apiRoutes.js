@@ -1,5 +1,6 @@
 var db = require("../models");
 var Sequelize = require("sequelize");
+var passport = require("../config/passport");
 
 
 var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
@@ -25,6 +26,10 @@ module.exports = function (app) {
       .then(function (dbUser) {
         res.json(dbUser);
       });
+  });
+
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
   });
 
   // // Create a new example

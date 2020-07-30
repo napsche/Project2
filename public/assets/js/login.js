@@ -1,7 +1,4 @@
-//has to link to login modal
-//needs logic to loop through users for matching credentials.
-
-$("#loginsubmit").on("click", function (event) {
+$("#loginSubmitBtn").on("click", function (event) {
     event.preventDefault();
     console.log("now this is running.");
     var userData = {
@@ -13,18 +10,17 @@ $("#loginsubmit").on("click", function (event) {
         return;
     }
     $.post("/api/login", {
-        email: email,
-        pass: pass
+        email: userData.email,
+        pass: userData.pass
     })
         .then(function () {
-            // window.location.replace("/index");
-            alert("Welcome " + userData)
+            console.log(pass, email); 
+            $('loginModal').modal('hide');
         })
-        .catch(function (err) {
+        .fail(function (err) {
             console.log(err);
         });
     $("#useremail").val("");
     $("#userpassword").val("");
-    $('loginModal').modal('hide');
 });
-    
+
