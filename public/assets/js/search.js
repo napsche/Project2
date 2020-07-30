@@ -1,8 +1,7 @@
 console.log(window.location.search);
-
 var pf = new petfinder.Client({
-  apiKey: process.env.PET_KEY,
-  secret: process.env.PET_SECRET
+  apiKey: "Vp4aC63WH2jN1Y2Rz1KNiyDDUeFCYR9IWc0WUsk7IDqO23N0PF",
+  secret: "ImWvGTeVwcchWGAuI9Cumt06OSznXlL7uPoX65j9"
 });
 
 // this works and posts results to the db
