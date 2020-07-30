@@ -1,7 +1,11 @@
 require("dotenv").config();
+console.log(process.env.PET_KEY)
+
 var express = require("express");
 var exphbs = require("express-handlebars");
 var mysql2 = require("mysql2");
+
+
 
  // Read and set environment variables
 
@@ -23,4 +27,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("----------------------------------------------")
     console.log("App listening on PORT " + PORT);
   });
+});
+app.get('/', function(req,res) {
+  res.render('search', {petKey: process.env.PET_KEY, petSecret: process.env.PET_SECRET})
 });
