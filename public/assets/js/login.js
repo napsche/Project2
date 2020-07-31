@@ -9,28 +9,17 @@ $("#loginSubmitBtn").on("click", function (event) {
     if (!userData.email || !userData.pass) {
         return;
     }
-    $.post("/api/login", {
+    $.post("/api/login/", {
         email: userData.email,
         pass: userData.pass
     })
         .then(function () {
-<<<<<<< HEAD
-            $('loginModal').modal('hide');
-
-            alert("Welcome " + userData)
-=======
             console.log(pass, email); 
             $('loginModal').modal('hide');
->>>>>>> 4f740be... adding passport
         })
         .fail(function (err) {
             console.log(err);
         });
     $("#useremail").val("");
     $("#userpassword").val("");
-<<<<<<< HEAD
 });
-    
-=======
-});
->>>>>>> 4f740be... adding passport

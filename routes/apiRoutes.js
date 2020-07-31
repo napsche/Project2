@@ -28,9 +28,23 @@ module.exports = function (app) {
       });
   });
 
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+ /* app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
+  
+*/
+  
+  app.post("/api/login/", passport.authenticate("local", {
+    successRedirect: '/index',
+    failureRedirect: '/error',
+    failureFlash:true
+  }),function (req, res) {
+    res.render("api/login",{"message" : req.flash("message")});
+  });
+
+
+
+
 
   // // Create a new example
   app.post("/api/new", function (req, res) {
