@@ -1,5 +1,5 @@
 require("dotenv").config();
-console.log(process.env.PET_KEY)
+console.log(process.env.PET_KEY);
 
 var express = require("express");
 var exphbs = require("express-handlebars");

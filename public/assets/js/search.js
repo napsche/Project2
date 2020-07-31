@@ -91,10 +91,13 @@ function postFxn() {
         var petPicture = response.data.animals[i].primary_photo_cropped.small;
         console.log(petPicture)
         var petSize = response.data.animals[i].size;
-        var petStatus = response.data.animals[i].status;
-        var petUpdated = response.data.animals[i].status_changed_at;
+        var petDescription = response.data.animals[i].description;
+        var petLink = response.data.animals[i].url;
+        var likeBtn = $("<button>");
+        likeBtn.text("");
+        likeBtn.addClass("<fas fa-thumbs-up>");
         
-        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petStatus+"</td>"+"</td>"+"<td>"+petUpdated+"</td>"+"</tr>")
+        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petDescription+"</td>"+"</td>"+"<td>"+petLink+"</td>"+"</td>"+"<td>"+likeBtn+"</td>"+"</tr>")
        }
 
         // var results = JSON.stringify(response);
