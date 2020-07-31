@@ -9,7 +9,7 @@ $("#loginSubmitBtn").on("click", function (event) {
     if (!userData.email || !userData.pass) {
         return;
     }
-    $.post("/api/login/", {
+    $.post("/api/login", {
         email: userData.email,
         pass: userData.pass
     })
