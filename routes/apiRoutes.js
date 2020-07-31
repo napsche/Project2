@@ -27,7 +27,7 @@ module.exports = function (app) {
         res.json(dbUser);
       });
   });
-
+  
  /* app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
@@ -41,10 +41,6 @@ module.exports = function (app) {
   }),function (req, res) {
     res.render("/index",{"message" : req.flash("message")});
   });
-
-
-
-
 
   // // Create a new example
   app.post("/api/new", function (req, res) {
