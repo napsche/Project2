@@ -50,7 +50,6 @@ $("#search-form").on("submit", function (event) {
   pf.animal.search(newSearch)
     .then(function (response) {
       event.preventDefault();
-      // Do something with `response.data.animals`
       console.log(response);
       $("#search").remove();
       console.log(response.data.animals[0]);
@@ -79,10 +78,6 @@ $("#search-form").on("submit", function (event) {
 
         $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petDescription+"</td>"+"<td><a type='button' class='btn btn-primary' href='"+petLink+"' target='blank'>Learn more</a></td>"+"</tr>")
       }
-
-      // var results = JSON.stringify(response);
-      // $("#search-container").append("<p>" + results + "</p>");
-
     })
     .catch(function (error) {
       // Handle the error

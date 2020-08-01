@@ -4,10 +4,6 @@ var passport = require("../config/passport");
 
 
 var queryURL = "https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?";
-// https://api.petfinder.com/v2/type=?&location=?&gender=?&age=?
-// https://api.petfinder.com/v2/dog/us/pa/shavertown/female/young
-
-
 
 module.exports = function (app) {
   // Get all examples
@@ -82,8 +78,6 @@ module.exports = function (app) {
       });
 
     });
-
-
     // Delete an example by id
     app.delete("/api/users/:id", function (req, res) {
       db.User.destroy({
@@ -105,25 +99,4 @@ module.exports = function (app) {
           res.json(dbUser);
         });
     });
-
-
-    // app.get("/api/new", function (req, res) {
-    //   var user = req.body;
-
-    //   NewUser.create({
-    //     uname: user.uname,
-    //     email: user.email,
-    //     pass: user.pass
-    //   });
-
-    // });
   };
-
-  // app.get("/api/search", function(req, res) {
-
-  //   var petKey = PET_KEY;
-  //   var petSecret = PET_SECRET;
-  
-  //   res.render('search.js', );
-  //   res.render('search.js'); 
-  // });
