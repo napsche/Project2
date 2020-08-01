@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "f!d3litY",
+      "password": "NewPassword!23",
       "database": "gitpetusers_db",
       "host": "localhost",
       "dialect": "mysql"
