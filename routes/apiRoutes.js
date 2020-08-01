@@ -52,8 +52,6 @@ module.exports = function (app) {
     }
   });
 
-
-
   // // Create a new example
   app.post("/api/new", function (req, res) {
     db.User.create({
