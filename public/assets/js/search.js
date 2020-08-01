@@ -71,15 +71,15 @@ $("#search-form").on("submit", function (event) {
           var link = $(this).data('pet-url');
           window.location.href = link;
         });
+
         var linkBtn = $("<button>");
         linkBtn.text(petName[i]);
         linkBtn.addClass("btn-pet");
         linkBtn.data('pet-url', petLink[i]);
 
-        $("#tBody").append("<tr><td>" + petName + "</td>" + "<td>" + "<img src='" + petPicture + "' class='img-fluid img-thumbnail'>" + "</td>" + "<td>" + petSize + "</td>" + "</td>" + "<td>" + petDescription + "</td>" + "</td>" + "<td>" + linkBtn + "</td>" + "</tr>")
+        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petDescription+"</td>"+"<td><a type='button' class='btn btn-primary' href='"+petLink+"' target='blank'>Learn more</a></td>"+"</tr>")
       }
 
-      
       // var results = JSON.stringify(response);
       // $("#search-container").append("<p>" + results + "</p>");
 
@@ -88,6 +88,7 @@ $("#search-form").on("submit", function (event) {
       // Handle the error
       console.log(error);
     });
+
   console.log("here!!");
   submitSearch();
 });
