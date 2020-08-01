@@ -5,9 +5,6 @@ $("#infosubmit").on("click", function (event) {
         uname: $("#inputuser").val().trim(),
         email: $("#inputemail").val().trim(),
         pass: $("#inputpassword").val().trim()
-        // uname: Sequelize.STRING,
-        // email: Sequelize.STRING,
-        // pass: Sequelize.STRING
     };
     
     console.log(newUser);
@@ -23,6 +20,3 @@ $("#infosubmit").on("click", function (event) {
     $("#inputpassword").val("");
     $('#signupModal').modal('hide');
   });
-//   newUser.sync();
-
-//   module.exports = newUser;

@@ -8,8 +8,6 @@ var mysql2 = require("mysql2");
 
 var passport = require("./config/passport");
 
- // Read and set environment variables
-
 var app = express();
 var PORT = process.env.PORT || 8080;
 
