@@ -9,18 +9,24 @@ $("#loginSubmitBtn").on("click", function (event) {
     if (!userData.email || !userData.pass) {
         return;
     }
-    $.post("/api/login", {
-        email: userData.email,
-        pass: userData.pass
-    })
-        .then(function () {
-            console.log(pass, email); 
-            $('loginModal').modal('hide');
+
+    function loginUser(email, password) {
+        $.post("/api/login", {
+            email: userData.email,
+            pass: userData.pass
         })
-        .fail(function (err) {
-            console.log(err);
-        });
-    $("#useremail").val("");
-    $("#userpassword").val("");
-});
+            .then(function () {
+                console.log(pass, email);
+                
+            })
+            .fail(function (err) {
+                console.log(err);
+            });
+        $("#useremail").val("");
+        $("#userpassword").val("");
+        $('loginModalForm').modal('hide');
+        }
+    });
+    
+
 

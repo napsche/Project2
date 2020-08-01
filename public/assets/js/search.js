@@ -97,9 +97,10 @@ function postFxn() {
         likeBtn.text("");
         likeBtn.addClass("<fas fa-thumbs-up>");
         
-        $("#tBody").link(petLink[i]);
-        $("#tBody").append("<tr><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petDescription+"</td>"+"</td>"+"<td>"+petLink+"</td>"+"</td>"+"<td>"+likeBtn+"</td>"+"</tr>")
-       }
+        
+        $("#tBody").append("<tr href='petLink'><td>"+petName+"</td>"+"<td>"+"<img src='"+petPicture+"' class='img-fluid img-thumbnail'>"+"</td>"+"<td>"+petSize+"</td>"+"</td>"+"<td>"+petDescription+"</td>"+"</td>"+"<td href='petLink' target='blank'>"+petLink+"</td>"+"</td>"+"<td>"+likeBtn+"</td>"+"</tr>")
+        // $("#tBody").link(petLink[i]);
+      }
 
         // var results = JSON.stringify(response);
         // $("#search-container").append("<p>" + results + "</p>");
