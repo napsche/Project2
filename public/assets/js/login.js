@@ -28,5 +28,3 @@ $("#loginSubmitBtn").on("click", function (event) {
         }
     });
     
-
-
