@@ -79,8 +79,8 @@ $("#search-form").on("submit", function (event) {
         $("#tBody").append("<tr><td>" + petName + "</td>" + "<td>" + "<img src='" + petPicture + "' class='img-fluid img-thumbnail'>" + "</td>" + "<td>" + petSize + "</td>" + "</td>" + "<td>" + petDescription + "</td>" + "</td>" + "<td>" + linkBtn + "</td>" + "</tr>")
       }
 
-      
 
+      
       // var results = JSON.stringify(response);
       // $("#search-container").append("<p>" + results + "</p>");
 
