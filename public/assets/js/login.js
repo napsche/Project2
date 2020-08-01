@@ -24,8 +24,9 @@ $("#loginSubmitBtn").on("click", function (event) {
             });
         $("#useremail").val("");
         $("#userpassword").val("");
-        $('loginModalForm').modal('hide');
     }
-    
+
+    $( '.modal' ).modal( 'hide' ).data( 'bs.modal', null );
+
 });
     
